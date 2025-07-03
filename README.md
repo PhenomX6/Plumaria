@@ -74,7 +74,7 @@ A organização dos arquivos do projeto segue a seguinte estrutura:
 
 ## 👤 Contato
 
-**Felipe Vieira Araujo**
+**Felipe Vieira**
 
 -   **Portfólio:** https://github.com/PhenomX6
 -   **LinkedIn:** https://www.linkedin.com/in/felipe-araujo-a2304818a/
