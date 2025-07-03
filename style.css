@@ -862,3 +862,32 @@ nav a:hover {
         display: block;
     }
 }
+
+/* ---- ESTILOS DA PÁGINA DE OBRIGADO ---- */
+.thank-you-section {
+    display: grid;
+    place-items: center; /* Centraliza tudo perfeitamente */
+    text-align: center;
+    min-height: 80vh; /* Garante que o conteúdo ocupe a maior parte da tela */
+    padding: 40px;
+}
+
+.thank-you-content svg {
+    color: #2E8B57; /* Um tom de verde para o sucesso */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.thank-you-content h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    color: #aaa;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+}
