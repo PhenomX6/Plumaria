@@ -1,0 +1,864 @@
+/* ---- ESTILOS GERAIS (BASE DO SITE) ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- ESTILOS DO CABEÇALHO E NAVEGAÇÃO ---- */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 60px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.header-scrolled {
+    background-color: #111;
+    padding: 20px 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+nav a:hover {
+    border-bottom-color: #fff;
+}
+
+/* ---- ESTILOS DA SEÇÃO HERO (PÁGINA INICIAL) ---- */
+#hero {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#spotlight-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(circle 250px at var(--mouse-x) var(--mouse-y), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.highlight-green {
+    background: linear-gradient(to right, #004e00, #007c00);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 5px;
+    text-shadow: none;
+}
+
+.hero-button {
+    margin-top: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #111;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* ---- ESTILOS DAS SEÇÕES COMUNS (PORTFÓLIO, METODOLOGIA, SOBRE) ---- */
+#portfolio,
+#metodologia,
+#sobre {
+    padding: 80px 40px;
+}
+
+#portfolio h2,
+#metodologia h2,
+#sobre h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+#portfolio,
+#sobre {
+    background-color: #1c1c1c;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.portfolio-item-featured {
+    grid-column: 1 / -1;
+}
+
+.portfolio-item-featured .portfolio-info h3 {
+    font-size: 2rem;
+}
+
+.portfolio-item {
+    background-color: #252525;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.portfolio-info p {
+    color: #aaa;
+}
+
+.metodologia-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.metodologia-passo {
+    padding: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.passo-numero {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #444;
+}
+
+.metodologia-passo h3 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.metodologia-passo p {
+    line-height: 1.6;
+}
+
+.sobre-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.team-card {
+    background-color: #252525;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.team-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid #444;
+}
+
+.team-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.team-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #999;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.team-card p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.team-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card .social-links a {
+    margin-right: 0;
+    color: white;
+}
+
+/* ---- ESTILOS DO RODAPÉ (PÁGINA INICIAL) ---- */
+#contato {
+    background-color: #000;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#contato p {
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* ---- ESTILOS DO NOVO RODAPÉ INFORMATIVO (PARA PÁGINAS SECUNDÁRIAS) ---- */
+/* ---- ESTILOS DO NOVO RODAPÉ INFORMATIVO (PARA PÁGINAS SECUNDÁRIAS) ---- */
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    /* A MUDANÇA: 'start' funciona melhor com o flexbox que vamos usar abaixo */
+    align-items: start;
+}
+
+/* A REGRA QUE ESTAVA FALTANDO E CORRIGE O ALINHAMENTO */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    /* A propriedade abaixo não é 'justify-content' e sim 'height' para garantir que todas as colunas tenham a mesma "força" na grade */
+    height: 100%;
+}
+
+/* Adicionamos um espaçamento extra para a coluna do meio e da direita */
+.footer-col:nth-child(2),
+.footer-col:nth-child(3) {
+    padding-top: 10px;
+    /* Pequeno ajuste para alinhar visualmente com a logo */
+}
+
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col p,
+.footer-col a {
+    color: #aaa;
+    text-decoration: none;
+    line-height: 1.7;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-logo img {
+    height: 110px;
+    /* Tamanho ajustado da logo */
+    width: auto;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: 1px solid #2E8B57;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    /* Garante que o link não ocupe a largura toda */
+    width: fit-content;
+}
+
+.whatsapp-link:hover {
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ---- ESTILOS DA PÁGINA DE CONTATO ---- */
+.form-section {
+    padding: 80px 40px 80px;
+    /* 80px topo, 40px laterais, 80px fundo */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.form-text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.form-text-content p {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.form-text-content a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+
+.eich-style-form .form-group {
+    margin-bottom: 2.5rem;
+}
+
+.eich-style-form label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.eich-style-form input,
+.eich-style-form textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #555;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 0;
+    transition: border-color 0.3s ease;
+}
+
+.eich-style-form input:focus,
+.eich-style-form textarea:focus {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+.eich-style-form ::placeholder {
+    color: #666;
+}
+
+/* ---- ESTILOS DAS PÁGINAS DE PROJETO ---- */
+.project-page-main {
+    width: 100%;
+    max-width: 100vw;
+}
+
+.project-hero {
+    padding: 0;
+}
+
+.project-hero-image-tag {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+.project-details-section {
+    padding: 60px 40px;
+    background-color: #1c1c1c;
+}
+
+.details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.detail-item span {
+    display: block;
+    color: #aaa;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.detail-item p {
+    font-size: 1.2rem;
+}
+
+.project-description-section {
+    padding: 80px 40px;
+}
+
+.description-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.description-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-gallery-section {
+    padding: 40px 0 80px;
+}
+
+.swiper {
+    width: 100%;
+    max-width: auto;
+    /* Largura máxima do carrossel */
+    height: 600 0px;
+    /* Altura fixa para o carrossel. Ajuste como preferir. */
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #1c1c1c;
+    /* Fundo para os slides */
+
+    /* Centraliza a imagem dentro do slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* 'contain' garante que a imagem inteira apareça sem ser cortada */
+}
+
+/* Personalizando as setas e bolinhas para nosso tema escuro */
+:root {
+    --swiper-navigation-color: #FFFFFF;
+    --swiper-pagination-color: #FFFFFF;
+}
+
+/* Adiciona um contorno/sombra nas setas do carrossel */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    /* Este filtro cria uma sombra preta de 2px ao redor do ícone da seta */
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
+}
+
+.swiper-pagination-bullet {
+    background: #333;
+    /* Cor de fundo padrão das bolinhas (um cinza escuro) */
+    opacity: 0.8;
+    /* Um pouco de transparência */
+    border: 1px solid transparent;
+    /* Cria espaço para o contorno sem mudar o layout */
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    /* Transição suave para o efeito de foco */
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+    /* Cor da bolinha ativa (branco) */
+    opacity: 1;
+    /* Sem transparência */
+    border-color: #fff;
+    /* Adiciona uma borda branca */
+}
+
+/* 5. Navegação entre Projetos */
+.project-navigation-section {
+    padding: 30px 40px;
+    background-color: #1c1c1c;
+    border-top: 1px solid #333;
+}
+
+.project-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-nav-link:hover {
+    color: #fff;
+    transform: translateX(5px);
+    /* Desloca a seta 5 pixels para a direita */
+}
+
+.project-nav-link.prev:hover {
+    transform: translateX(-5px);
+    /* Desloca a seta para esquerda no link "anterior" */
+}
+
+.project-nav-link .arrow {
+    font-size: 2rem;
+    /* Tamanho da seta */
+}
+
+.project-nav-link.next {
+    text-align: right;
+    /* Alinha o texto do link "Próximo" à direita */
+}
+
+.back-to-portfolio-icon {
+    color: #aaa;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-portfolio-icon:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Deixa a navegação mais limpa em telas menores */
+@media (max-width: 768px) {
+    .project-nav-link .nav-text {
+        display: none;
+        /* Esconde o texto, deixando só as setas */
+    }
+}
+
+.back-to-portfolio:hover {
+    background-color: #FFFFFF;
+    color: #111111;
+}
+
+/* ---- MELHORIAS E RESPONSIVIDADE ---- */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* ---- DENTRO DA SUA MEDIA QUERY @media (max-width: 768px) ---- */
+
+    /* ... outras regras responsivas que você já tem aqui ... */
+
+    nav.primary-navigation {
+        /* Posição e aparência do painel do menu */
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 30%;
+        /* O menu ocupará 70% da tela, vindo da direita */
+        z-index: 9990;
+        /* Z-index alto, mas menor que o do botão 'X' (10000) */
+
+        background-color: rgba(20, 20, 20, 0.9);
+        backdrop-filter: blur(10px);
+        /* Efeito de vidro fosco */
+
+        /* Esconde o menu fora da tela por padrão */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-out;
+
+        /* Estilos para alinhar os links dentro do menu */
+        padding: 8rem 2rem;
+    }
+
+    /* A REGRA MÁGICA QUE ESTAVA FALTANDO */
+    nav.primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+        /* Traz o menu para a tela */
+    }
+
+    /* Garante que os links fiquem em coluna e com bom espaçamento */
+    nav.primary-navigation ul {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    nav.primary-navigation a {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item-featured {
+        grid-column: auto;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/*---------------------------------- TELA DE LOAD -------------------------------*/
+
+#preloader {
+    position: fixed;
+    /* Fica fixo na tela e não rola com a página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    /* Mesma cor de fundo do seu site */
+    z-index: 9999;
+    /* Garante que fique sobre absolutamente tudo */
+
+    /* Centraliza a logo perfeitamente no meio */
+    display: grid;
+    place-items: center;
+
+    /* Propriedades para a animação de desaparecimento */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Classe que vamos adicionar com JavaScript para esconder o preloader */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    /* Remove o elemento da tela, permitindo cliques nos links abaixo */
+}
+
+/* Estilo da logo dentro do preloader */
+#preloader img {
+    width: 150px;
+    /* Tamanho da logo na tela de loading. Ajuste se necessário. */
+    /* Animação de pulso opcional para dar vida à logo */
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* ---- ESTILOS DO BOTÃO DE MENU MOBILE (HAMBÚRGUER) ---- */
+
+.mobile-nav-toggle {
+    display: none;
+    /* Escondido por padrão no desktop */
+    position: relative;
+    width: 2.5rem;
+    /* Tamanho da área clicável */
+    height: 2.5rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 10000;
+    /* Garante que fique na frente de tudo */
+}
+
+.mobile-nav-toggle .line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    /* Espessura da linha */
+    background-color: #fff;
+    /* Cor da linha */
+    border-radius: 2px;
+    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+}
+
+/* Posição de cada uma das 3 linhas */
+.mobile-nav-toggle .line:nth-child(1) {
+    top: 20%;
+}
+
+.mobile-nav-toggle .line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mobile-nav-toggle .line:nth-child(3) {
+    bottom: 20%;
+}
+
+/* Animação do botão para se transformar em um "X" quando o menu está aberto */
+.mobile-nav-toggle[data-open="true"] .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-nav-toggle[data-open="true"] .line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle[data-open="true"] .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Regra que FAZ O BOTÃO APARECER em telas de celular */
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+}
