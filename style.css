@@ -1,4 +1,4 @@
-/* ---- ESTILOS GERAIS (BASE DO SITE) ---- */
+/* ---- ESTILOS GERAIS ---- */
 * {
     margin: 0;
     padding: 0;
@@ -63,7 +63,7 @@ nav a:hover {
     border-bottom-color: #fff;
 }
 
-/* ---- ESTILOS DA SEÇÃO HERO (PÁGINA INICIAL) ---- */
+/* ---- ESTILOS DA SEÇÃO HERO ---- */
 #hero {
     height: 100vh;
     overflow: hidden;
@@ -136,7 +136,7 @@ nav a:hover {
     border-color: #fff;
 }
 
-/* ---- ESTILOS DAS SEÇÕES COMUNS (PORTFÓLIO, METODOLOGIA, SOBRE) ---- */
+/* ---- ESTILOS DAS SEÇÕES (PORTFÓLIO, SERVIÇOS, SOBRE) ---- */
 #portfolio,
 #metodologia,
 #sobre {
@@ -291,7 +291,7 @@ nav a:hover {
     color: white;
 }
 
-/* ---- ESTILOS DO RODAPÉ (PÁGINA INICIAL) ---- */
+/* ---- ESTILOS DO FOOTER PAGINA INICIAL ---- */
 #contato {
     background-color: #000;
     padding: 100px 40px;
@@ -310,8 +310,7 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
-/* ---- ESTILOS DO NOVO RODAPÉ INFORMATIVO (PARA PÁGINAS SECUNDÁRIAS) ---- */
-/* ---- ESTILOS DO NOVO RODAPÉ INFORMATIVO (PARA PÁGINAS SECUNDÁRIAS) ---- */
+/* ---- ESTILOS DO NOVO FOOTER COM DADOS ---- */
 
 .footer-grid {
     max-width: 1200px;
@@ -319,23 +318,18 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    /* A MUDANÇA: 'start' funciona melhor com o flexbox que vamos usar abaixo */
     align-items: start;
 }
 
-/* A REGRA QUE ESTAVA FALTANDO E CORRIGE O ALINHAMENTO */
 .footer-col {
     display: flex;
     flex-direction: column;
-    /* A propriedade abaixo não é 'justify-content' e sim 'height' para garantir que todas as colunas tenham a mesma "força" na grade */
     height: 100%;
 }
 
-/* Adicionamos um espaçamento extra para a coluna do meio e da direita */
 .footer-col:nth-child(2),
 .footer-col:nth-child(3) {
     padding-top: 10px;
-    /* Pequeno ajuste para alinhar visualmente com a logo */
 }
 
 
@@ -359,7 +353,6 @@ nav a:hover {
 
 .footer-logo img {
     height: 110px;
-    /* Tamanho ajustado da logo */
     width: auto;
 }
 
@@ -372,7 +365,6 @@ nav a:hover {
     border: 1px solid #2E8B57;
     border-radius: 50px;
     transition: background-color 0.3s ease;
-    /* Garante que o link não ocupe a largura toda */
     width: fit-content;
 }
 
@@ -393,7 +385,6 @@ nav a:hover {
 /* ---- ESTILOS DA PÁGINA DE CONTATO ---- */
 .form-section {
     padding: 80px 40px 80px;
-    /* 80px topo, 40px laterais, 80px fundo */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -524,9 +515,7 @@ nav a:hover {
 .swiper {
     width: 100%;
     max-width: auto;
-    /* Largura máxima do carrossel */
     height: 600 0px;
-    /* Altura fixa para o carrossel. Ajuste como preferir. */
     margin: 0 auto;
 }
 
@@ -534,9 +523,6 @@ nav a:hover {
     text-align: center;
     font-size: 18px;
     background: #1c1c1c;
-    /* Fundo para os slides */
-
-    /* Centraliza a imagem dentro do slide */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -547,19 +533,15 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* 'contain' garante que a imagem inteira apareça sem ser cortada */
 }
 
-/* Personalizando as setas e bolinhas para nosso tema escuro */
 :root {
     --swiper-navigation-color: #FFFFFF;
     --swiper-pagination-color: #FFFFFF;
 }
 
-/* Adiciona um contorno/sombra nas setas do carrossel */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    /* Este filtro cria uma sombra preta de 2px ao redor do ícone da seta */
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
 }
 
@@ -639,7 +621,6 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Deixa a navegação mais limpa em telas menores */
 @media (max-width: 768px) {
     .project-nav-link .nav-text {
         display: none;
@@ -652,7 +633,7 @@ nav a:hover {
     color: #111111;
 }
 
-/* ---- MELHORIAS E RESPONSIVIDADE ---- */
+/* ---- RESPONSIVIDADE ---- */
 .hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -684,41 +665,26 @@ nav a:hover {
         display: block;
     }
 
-    /* ---- DENTRO DA SUA MEDIA QUERY @media (max-width: 768px) ---- */
-
-    /* ... outras regras responsivas que você já tem aqui ... */
-
     nav.primary-navigation {
-        /* Posição e aparência do painel do menu */
         display: block;
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 30%;
-        /* O menu ocupará 70% da tela, vindo da direita */
         z-index: 9990;
-        /* Z-index alto, mas menor que o do botão 'X' (10000) */
-
         background-color: rgba(20, 20, 20, 0.9);
         backdrop-filter: blur(10px);
-        /* Efeito de vidro fosco */
-
-        /* Esconde o menu fora da tela por padrão */
         transform: translateX(100%);
         transition: transform 0.4s ease-out;
-
-        /* Estilos para alinhar os links dentro do menu */
         padding: 8rem 2rem;
     }
 
-    /* A REGRA MÁGICA QUE ESTAVA FALTANDO */
     nav.primary-navigation[data-visible="true"] {
         transform: translateX(0%);
         /* Traz o menu para a tela */
     }
 
-    /* Garante que os links fiquem em coluna e com bom espaçamento */
     nav.primary-navigation ul {
         flex-direction: column;
         gap: 2.5rem;
@@ -750,27 +716,20 @@ nav a:hover {
 
 #preloader {
     position: fixed;
-    /* Fica fixo na tela e não rola com a página */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #111;
-    /* Mesma cor de fundo do seu site */
     z-index: 9999;
-    /* Garante que fique sobre absolutamente tudo */
-
-    /* Centraliza a logo perfeitamente no meio */
     display: grid;
     place-items: center;
-
-    /* Propriedades para a animação de desaparecimento */
     opacity: 1;
     visibility: visible;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* Classe que vamos adicionar com JavaScript para esconder o preloader */
+/* Classe que some o preloader */
 #preloader.hidden {
     opacity: 0;
     visibility: hidden;
@@ -780,12 +739,10 @@ nav a:hover {
 /* Estilo da logo dentro do preloader */
 #preloader img {
     width: 150px;
-    /* Tamanho da logo na tela de loading. Ajuste se necessário. */
-    /* Animação de pulso opcional para dar vida à logo */
     animation: pulse 1.5s infinite ease-in-out;
 }
 
-/* Animação de pulso */
+/* Animação */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -805,16 +762,13 @@ nav a:hover {
 
 .mobile-nav-toggle {
     display: none;
-    /* Escondido por padrão no desktop */
     position: relative;
     width: 2.5rem;
-    /* Tamanho da área clicável */
     height: 2.5rem;
     background: transparent;
     border: 0;
     cursor: pointer;
     z-index: 10000;
-    /* Garante que fique na frente de tudo */
 }
 
 .mobile-nav-toggle .line {
@@ -822,14 +776,11 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 3px;
-    /* Espessura da linha */
     background-color: #fff;
-    /* Cor da linha */
     border-radius: 2px;
     transition: transform 0.3s ease-out, opacity 0.1s ease-out;
 }
 
-/* Posição de cada uma das 3 linhas */
 .mobile-nav-toggle .line:nth-child(1) {
     top: 20%;
 }
@@ -866,14 +817,14 @@ nav a:hover {
 /* ---- ESTILOS DA PÁGINA DE OBRIGADO ---- */
 .thank-you-section {
     display: grid;
-    place-items: center; /* Centraliza tudo perfeitamente */
+    place-items: center; 
     text-align: center;
-    min-height: 80vh; /* Garante que o conteúdo ocupe a maior parte da tela */
+    min-height: 80vh; 
     padding: 40px;
 }
 
 .thank-you-content svg {
-    color: #2E8B57; /* Um tom de verde para o sucesso */
+    color: #2E8B57;
     width: 80px;
     height: 80px;
     margin-bottom: 1.5rem;
