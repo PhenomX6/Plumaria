@@ -61,7 +61,6 @@ A organização dos arquivos do projeto segue a seguinte estrutura:
 │   ├── favicons/
 │   ├── images/
 │   │   └── portfolio/
-│   └── videos/
 ├── index.html
 ├── contato.html
 ├── nutravance.html
