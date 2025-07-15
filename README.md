@@ -44,7 +44,7 @@ Para visualizar o projeto no seu próprio computador, siga os passos abaixo.
 
 1.  Clone este repositório:
     ```bash
-    git clone [(https://github.com/PhenomX6/Plumaria.git)]
+    git clone https://github.com/PhenomX6/Plumaria.git
     ```
 2.  Abra a pasta do projeto no VS Code.
 3.  Clique com o botão direito no arquivo `index.html` e selecione **"Open with Live Server"**.
