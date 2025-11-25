@@ -2,11 +2,11 @@
 
 Este é o repositório do site institucional e portfólio da Plumária, uma agência focada em branding e comunicação audiovisual. O projeto foi desenvolvido para apresentar os serviços, metodologia e projetos da empresa de forma moderna e interativa.
 
-**➡️ [Acesse o site no ar](https://www.plumaria.com.br)** ---
+**[Acesse o site no ar](https://www.plumaria.com.br)** ---
 
 
 
-## ✨ Features
+## Features
 
 O site conta com diversas funcionalidades modernas para criar uma experiência de usuário rica e fluida:
 
@@ -22,7 +22,7 @@ O site conta com diversas funcionalidades modernas para criar uma experiência d
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Este projeto foi construído utilizando as seguintes tecnologias:
 
@@ -33,7 +33,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 
 ---
 
-## 🚀 Como Rodar o Projeto Localmente
+## Como Rodar o Projeto Localmente
 
 Para visualizar o projeto no seu próprio computador, siga os passos abaixo.
 
@@ -51,7 +51,7 @@ Para visualizar o projeto no seu próprio computador, siga os passos abaixo.
 
 ---
 
-## 📁 Estrutura de Pastas
+## Estrutura de Pastas
 
 A organização dos arquivos do projeto segue a seguinte estrutura:
 
@@ -71,7 +71,7 @@ A organização dos arquivos do projeto segue a seguinte estrutura:
 
 ---
 
-## 👤 Contato
+## Contato
 
 **Felipe Vieira**
 
