@@ -1,80 +1,41 @@
-# Site Institucional - Plumária
+# Plumária
 
-Este é o repositório do site institucional e portfólio da Plumária, uma agência focada em branding e comunicação audiovisual. O projeto foi desenvolvido para apresentar os serviços, metodologia e projetos da empresa de forma moderna e interativa.
+Site institucional e portfólio de branding, design e audiovisual da Plumária.
 
-**[Acesse o site no ar](https://www.plumaria.com.br)** ---
+[Visitar o site](https://www.plumaria.com.br) · [Endereço Vercel](https://plumaria.vercel.app)
 
+## Experiência
 
+- Identidade escura, tipografia editorial e destaques verdes.
+- Portfólio com Nutravance, Zeloo, Mercadão Agropet e Duffi.
+- Páginas de projeto com imagens originais e galeria ampliável. Use os botões ou as setas do teclado para navegar; Escape fecha a galeria.
+- Serviços em seções expansíveis e apresentação dos fundadores.
+- Navegação adaptada ao celular, com fechamento por Escape, controle de foco e indicação de estado.
+- Animações discretas que respeitam a preferência de movimento reduzido.
+- Formulário de contato integrado ao FormSubmit, seleção opcional de serviços, validação nativa e proteção por campo oculto.
+- Contatos por e-mail e WhatsApp preservados.
 
-## Features
+## Desenvolvimento
 
-O site conta com diversas funcionalidades modernas para criar uma experiência de usuário rica e fluida:
+HTML, CSS e JavaScript sem etapa de build ou instalação de pacotes. Fontes Manrope e DM Sans servidas pelo Google Fonts, com fontes locais de fallback.
 
--   **Design Responsivo:** Totalmente adaptado para desktops, tablets e celulares.
--   **Cabeçalho Sticky:** O menu de navegação acompanha o usuário durante a rolagem da página.
--   **Menu Hambúrguer:** Menu otimizado para a experiência mobile.
--   **Efeito Spotlight Interativo:** Na seção principal, um efeito de luz segue o cursor do mouse.
--   **Animações de Scroll:** Elementos surgem suavemente na tela conforme o usuário rola a página.
--   **Carrossel de Imagens:** A galeria de projetos utiliza um carrossel interativo (SwiperJS).
--   **Páginas de Projeto Dedicadas:** Cada projeto do portfólio tem sua própria página com detalhes.
--   **Tela de Loading (Preloader):** Uma transição suave com a logo ao carregar as páginas.
--   **Formulário de Contato Funcional:** Integrado com o serviço FormSubmit para envio de e-mails.
+Sirva a pasta com o Live Server do VS Code ou com Python:
 
----
-
-## Tecnologias Utilizadas
-
-Este projeto foi construído utilizando as seguintes tecnologias:
-
--   **HTML5** (Estrutura semântica)
--   **CSS3** (Estilização com Flexbox e Grid Layout)
--   **JavaScript (ES6+)** (Para interatividade e manipulação do DOM)
--   **SwiperJS** (Biblioteca para o carrossel de imagens)
-
----
-
-## Como Rodar o Projeto Localmente
-
-Para visualizar o projeto no seu próprio computador, siga os passos abaixo.
-
-**Pré-requisitos:**
-* É recomendado ter o [Visual Studio Code](https://code.visualstudio.com/) com a extensão **Live Server**.
-
-**Passos:**
-
-1.  Clone este repositório:
-    ```bash
-    git clone https://github.com/PhenomX6/Plumaria.git
-    ```
-2.  Abra a pasta do projeto no VS Code.
-3.  Clique com o botão direito no arquivo `index.html` e selecione **"Open with Live Server"**.
-
----
-
-## Estrutura de Pastas
-
-A organização dos arquivos do projeto segue a seguinte estrutura:
-
-```
-/
-├── assets/
-│   ├── favicons/
-│   ├── images/
-│   │   └── portfolio/
-├── index.html
-├── contato.html
-├── nutravance.html
-├── (outras páginas de projeto).html
-├── style.css
-└── script.js
+```sh
+python -m http.server 8080
 ```
 
----
+Abra http://localhost:8080. O formulário utiliza um serviço externo e deve ser testado com autorização para enviar uma mensagem real. O retorno após o envio utiliza o endereço de origem atual e a página `obrigado.html`.
 
-## Contato
+## Estrutura
 
-**Felipe Vieira**
+- `index.html`: página inicial, portfólio, serviços e estúdio.
+- `nutravance.html`, `zeloo.html`, `mercadao.html`, `duffi.html`: projetos e galerias.
+- `contato.html`: formulário e canais de contato.
+- `obrigado.html`: confirmação após envio.
+- `style.css` e `script.js`: apresentação e interações compartilhadas.
+- `assets/`: identidade, fotos e aplicações dos projetos.
 
--   **Portfólio:** https://github.com/PhenomX6
--   **LinkedIn:** https://www.linkedin.com/in/felipe-araujo-a2304818a/
--   **Email:** felipedok123@gmail.com
+## Publicação
+
+A integração existente entre GitHub e Vercel publica as alterações da branch principal. A reformulação mantém os caminhos das páginas e os arquivos de imagem originais.
